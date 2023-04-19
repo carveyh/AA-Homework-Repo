@@ -67,7 +67,7 @@ class Play
 	
 	def update #update existing instances of Play in DB
 		#here opposite of check for #create:
-		raise "#{self} not in database" unless #id
+		raise "#{self} not in database" unless @id
 		PlayDBConnection.instance.execute(<<-SQL, @title, @year, @playwright_id, @id)
 			UPDATE
 				plays
